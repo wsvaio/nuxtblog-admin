@@ -5,9 +5,9 @@ name: nuxtblog-admin
 steps:
   - name: greeting
     image: node
-    volumes:
-      - name: dict
-        path: ./dict
+    # volumes:
+    #   - name: dict
+    #     path: ./dict
     commands:
       - echo hello world
       - ls
@@ -15,7 +15,7 @@ steps:
       - cd /
       - ls
 
-volumes:
-  - name: dict
-    host:
-      path: /app/nginx/html/nuxtblog
+# volumes:
+#   - name: dict
+#     host:
+#       path: /app/nginx/html/nuxtblog
