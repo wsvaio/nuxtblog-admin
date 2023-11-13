@@ -6,5 +6,7 @@ name: nuxtblog-admin
 steps:
 - name: greeting
   commands:
-  -	echo hello world
+  - echo hello world
   - ls
+
+
