@@ -2,10 +2,18 @@ kind: pipeline
 type: docker
 name: nuxtblog-admin
 
-
 steps:
   - name: greeting
-    image: alpine
+    image: node
+    volumes:
+      - name: dict
+        path: ./dict
     commands:
       - echo hello world
       - ls
+      - pwd
+
+volumes:
+  - name: dict
+    host:
+      path: /app/nginx/html/nuxtblog
