@@ -12,6 +12,8 @@ steps:
       - echo hello world
       - ls
       - pwd
+      - cd /
+      - ls
 
 volumes:
   - name: dict
