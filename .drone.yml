@@ -2,8 +2,11 @@ kind: pipeline
 type: exec
 name: nuxtblog-admin
 
+platform:
+  os: linux
+  arch: amd64
+
 steps:
   - name: greeting
     commands:
       - echo hello world
-      - ls
