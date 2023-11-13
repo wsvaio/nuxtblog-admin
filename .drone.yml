@@ -3,16 +3,34 @@ type: docker
 name: nuxtblog-admin
 
 steps:
-  - name: greeting
-    image: node
-    volumes:
-      - name: dist
-        path: /drone/src/dist
-    commands:
-      - npm --registry https://registry.npm.taobao.org i
-      - npm run build
+  # - name: build
+  #   image: node
+  #   commands:
+  #     - npm i
+  #     - npm run build
 
-volumes:
-  - name: dist
-    host:
-      path: /app/nginx/html/blog-admin
+  - name: clean
+    image: appleboy/drone-ssh
+    settings:
+      host: 121.40.126.12
+      username: root
+      password:
+        from_secret: ssh_password
+      port: 22
+      command_timeout: 5m
+      script:
+        - rm -rf /app/nginx/html/blog/*
+
+  - name: upload
+    image: appleboy/drone-scp
+    settings:
+      host: 121.40.126.12
+      username: root
+      password:
+        from_secret: ssh_password
+      port: 22
+      command_timeout: 2m
+      source:
+        - ./dist/*
+      target:
+        - /app/nginx/html/blog/
