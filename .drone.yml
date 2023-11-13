@@ -3,9 +3,8 @@ type: exec
 name: nuxtblog-admin
 
 
-
 steps:
 - name: greeting
   commands:
-	-	echo hello world
-	- ls
+  -	echo hello world
+  - ls
