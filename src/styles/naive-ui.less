@@ -1,0 +1,19 @@
+.n-spin-container {
+	.n-spin-content {
+		height: 100%;
+	}
+}
+
+.n-scrollbar {
+	& > .n-scrollbar-rail {
+		z-index: 10;
+	}
+
+	& > .n-scrollbar-container {
+		& > .n-scrollbar-content {
+			display: flex;
+			flex-direction: column;
+			min-height: 100%;
+		}
+	}
+}
