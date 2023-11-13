@@ -5,17 +5,14 @@ name: nuxtblog-admin
 steps:
   - name: greeting
     image: node
-    # volumes:
-    #   - name: dict
-    #     path: ./dict
+    volumes:
+      - name: dict
+        path: /drone/src/dict
     commands:
-      - echo hello world
-      - ls
-      - pwd
-      - cd /
-      - ls
+      - npm i
+      - npm run build
 
-# volumes:
-#   - name: dict
-#     host:
-#       path: /app/nginx/html/nuxtblog
+volumes:
+  - name: dict
+    host:
+      path: /app/nginx/html/nuxtblog
