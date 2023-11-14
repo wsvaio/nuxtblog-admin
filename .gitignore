@@ -1,4 +1,4 @@
 node_modules
-dist
+# dist
 auto-import.d.ts
 auto-components.d.ts
