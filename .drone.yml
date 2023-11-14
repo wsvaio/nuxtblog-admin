@@ -6,7 +6,7 @@ steps:
   - name: build
     image: node
     commands:
-      - npm i
+      - npm --registry https://registry.npmmirror.com install
       - npm run build
 
   - name: clean
