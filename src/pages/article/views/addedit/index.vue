@@ -48,7 +48,7 @@ const submit = async () => {
 		width="var(--lg)"
 		:loading="load.$loading"
 		@before-enter="payload.addeditTitle == '修改' && load.$action('同步类型'), list.Types(), list.Tags()"
-		@after-leave="load.$reset('name')"
+		@after-leave="load.$reset()"
 	>
 		<template #header>
 			<span>{{ payload.addeditTitle }}</span>

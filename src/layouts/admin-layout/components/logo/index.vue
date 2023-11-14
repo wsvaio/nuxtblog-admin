@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ILogo from "@/assets/img/logo.png";
+import ILogo from "@/assets/img/logo.webp";
 
 withDefaults(
 	defineProps<{

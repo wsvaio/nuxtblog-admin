@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { usePagination } from "vue-request";
-import { NButton } from "naive-ui";
+import { NButton, NPopconfirm } from "naive-ui";
 import { usePayload } from "@wsvaio/use";
 import AddeditView from "./views/addedit/index.vue";
 import type { Payload } from ".";
@@ -35,6 +35,10 @@ const { data, pageSize, current, total, refreshAsync, loading } = $(
 );
 
 payload.$use("刷新列表")(async () => refreshAsync());
+payload.$use("删除")(async () => {
+	await delType({ p: { id: payload.id } });
+	await refreshAsync();
+});
 </script>
 
 <template>
@@ -85,8 +89,8 @@ payload.$use("刷新列表")(async () => refreshAsync());
 					title: '操作',
 					key: 'id',
 					ellipsis: true,
-					width: '4em',
-					render: rowData =>
+					width: '6.5em',
+					render: rowData => [
 						h(
 							NButton,
 							{
@@ -98,6 +102,30 @@ payload.$use("刷新列表")(async () => refreshAsync());
 							},
 							{ default: () => '修改' },
 						),
+
+						h(
+							NPopconfirm,
+							{
+								onPositiveClick: () => {
+									payload.$action({ $name: '删除', id: rowData.id });
+								},
+							},
+							{
+								default: () => h('span', '确定删除？'),
+								trigger: () =>
+									h(
+										NButton,
+										{
+											text: true,
+											type: 'error',
+											class: 'ml-0.5em',
+											onClick: () => {},
+										},
+										{ default: () => '删除' },
+									),
+							},
+						),
+					],
 				},
 			]"
 		/>

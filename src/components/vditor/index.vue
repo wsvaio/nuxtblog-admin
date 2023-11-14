@@ -5,11 +5,13 @@ import "vditor/dist/index.css";
 
 let value = $(defineModel<string>("value", { default: "" }));
 let vditor = $ref<Vditor>();
+let isVditorInit = $ref(false);
 watch(
 	() => value,
 	val => {
+		if (!isVditorInit) return;
 		let v = vditor?.getValue();
-		if (v !== val) vditor?.setValue(val);
+		if (val && v !== val) vditor?.setValue(val);
 	}
 );
 
@@ -17,6 +19,7 @@ onMounted(() => {
 	vditor = new Vditor("vditor", {
 		after: () => {
 			vditor?.setValue(value);
+			isVditorInit = true;
 		},
 		input(_value) {
 			value = _value;
@@ -39,7 +42,6 @@ onMounted(() => {
 				});
 			},
 			max: 1048576 * 100,
-
 		},
 	});
 });

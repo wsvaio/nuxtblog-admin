@@ -66,7 +66,7 @@ use("final")(async ctx => {
 	}
 	else {
 		ctx.message
-			= data?.msg || data?.error || ctx?.data?.violations?.map(item => item.message)?.join("，") || ctx?.data?.detail || ctx?.data?.title || ctx.message;
+			= data?.message || ctx.message;
 	}
 });
 // 成功提示

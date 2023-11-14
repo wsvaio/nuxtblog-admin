@@ -72,33 +72,33 @@ export const getStaticRoutes = (): RouteRecordRaw[] => [
 	{
 		path: "/article",
 		name: "/article",
-		meta: { title: "文章", icon: "i-carbon-ibm-cloud-projects" },
+		meta: { title: "文章", icon: "i-material-symbols-article-outline" },
 		component: getComponent("/article"),
 	},
 	{
 		path: "/tag",
 		name: "/tag",
-		meta: { title: "标签", icon: "i-carbon-ibm-cloud-projects" },
+		meta: { title: "标签", icon: "i-ph-bookmarks" },
 		component: getComponent("/tag"),
 	},
 	{
 		path: "/type",
 		name: "/type",
-		meta: { title: "类型", icon: "i-carbon-ibm-cloud-projects" },
+		meta: { title: "类型", icon: "i-carbon-types" },
 		component: getComponent("/type"),
 	},
-	{
-		path: "/comment",
-		name: "/comment",
-		meta: { title: "评论", icon: "i-carbon-ibm-cloud-projects" },
-		component: getComponent("/comment"),
-	},
-	{
-		path: "/user",
-		name: "/user",
-		meta: { title: "用户", icon: "i-carbon-ibm-cloud-projects" },
-		component: getComponent("/user"),
-	},
+	// {
+	// 	path: "/comment",
+	// 	name: "/comment",
+	// 	meta: { title: "评论", icon: "i-carbon-ibm-cloud-projects" },
+	// 	component: getComponent("/comment"),
+	// },
+	// {
+	// 	path: "/user",
+	// 	name: "/user",
+	// 	meta: { title: "用户", icon: "i-carbon-ibm-cloud-projects" },
+	// 	component: getComponent("/user"),
+	// },
 
 ];
 

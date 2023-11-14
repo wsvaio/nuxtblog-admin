@@ -2,18 +2,6 @@
 import { darkTheme, dateZhCN, lightTheme, zhCN } from "naive-ui";
 
 const setting = useSettingStore();
-
-const icons = [
-	"i-carbon-ibm-cloud-projects",
-	"i-carbon-in-progress",
-	"i-fa6-solid-helmet-safety",
-	"i-material-symbols-supervised-user-circle-outline",
-	"i-material-symbols-smart-toy-outline",
-	"i-material-symbols-devices-other",
-	"i-carbon-cloud-satellite-config",
-	"i-uil-sitemap",
-
-];
 </script>
 
 <template>
@@ -41,7 +29,7 @@ const icons = [
 		<global-loading v-if="setting.globalLoading" />
 	</transition>
 
-	<div :class="icons" :style="{ display: 'none' }" />
+	<div class="i-material-symbols-article-outline i-ph-bookmarks i-carbon-types" :style="{ display: 'none' }" />
 </template>
 
 <style lang="less" scoped></style>
