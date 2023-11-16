@@ -19,7 +19,7 @@ steps:
       port: 22
       command_timeout: 5m
       script:
-        - rm -rf /app/nginx/html/blog-admin/*
+        - rm -rf /app/nginx/html/blog/admin/*
 
   - name: upload
     image: appleboy/drone-scp
@@ -33,7 +33,7 @@ steps:
       source:
         - ./dist
       target:
-        - /app/nginx/html/blog-admin
+        - /app/nginx/html/blog/admin
 
   - name: mv
     image: appleboy/drone-ssh
@@ -45,5 +45,5 @@ steps:
       port: 22
       command_timeout: 5m
       script:
-        - mv /app/nginx/html/blog-admin/dist/* /app/nginx/html/blog-admin/
-        - rm -rf /app/nginx/html/blog-admin/dist
+        - mv /app/nginx/html/blog/admin/dist/* /app/nginx/html/blog/admin/
+        - rm -rf /app/nginx/html/blog/admin/dist
