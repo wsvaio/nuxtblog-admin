@@ -29,6 +29,7 @@
 		"echarts": "^5.4.3",
 		"gsap": "^3.12.2",
 		"jsqr": "^1.4.0",
+		"md-editor-v3": "^4.8.3",
 		"naive-ui": "^2.35.0",
 		"normalize.css": "^8.0.1",
 		"pinia": "^2.1.6",

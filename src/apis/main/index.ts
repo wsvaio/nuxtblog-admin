@@ -34,4 +34,6 @@ export const delUser = del("/user/:id");
 export const authUser = get("/user/auth");
 export const authToken = get("/user/oauth/github/:code");
 
+export const upload = post("/file");
+
 export const toFileUrl = (id: string) => `${DEV ? "/api" : VITE_BASE_API}/file/${id}`;

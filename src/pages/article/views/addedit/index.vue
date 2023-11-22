@@ -98,7 +98,7 @@ const submit = async () => {
 
 			<n-form-item path="content" label="内容" :rule="{ required: true, message: '请输入内容' }">
 				<div class="w-full h-512px">
-					<vditor v-model:value="load.content" class="!w-full !h-full" />
+					<markdown-editor v-model="load.content" class="!w-full !h-full" />
 				</div>
 			</n-form-item>
 		</n-form>
