@@ -30,5 +30,6 @@
   },
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.inlineSuggest.showToolbar": "onHover"
 }

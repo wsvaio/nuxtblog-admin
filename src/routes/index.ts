@@ -87,6 +87,12 @@ export const getStaticRoutes = (): RouteRecordRaw[] => [
 		meta: { title: "类型", icon: "i-carbon-types" },
 		component: getComponent("/type"),
 	},
+	{
+		path: "/music",
+		name: "/music",
+		meta: { title: "音乐", icon: "i-carbon-types" },
+		component: getComponent("/music"),
+	},
 	// {
 	// 	path: "/comment",
 	// 	name: "/comment",

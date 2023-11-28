@@ -31,6 +31,21 @@ export const postUser = post("/user");
 export const putUser = put("/user/:id");
 export const delUser = del("/user/:id");
 
+export const getMusic = get("/music/:id?");
+export const getMusicAll = get("/music/all");
+export const postMusic = post("/music");
+export const putMusic = put("/music/:id");
+export const delMusic = del("/music/:id");
+
+export const getFile = get({
+	url: "/file/:id?",
+	q: { type: "json" }
+});
+export const getFileAll = get("/file/all");
+export const postFile = post("/file");
+export const putFile = put("/file/:id");
+export const delFile = del("/file/:id");
+
 export const authUser = get("/user/auth");
 export const authToken = get("/user/oauth/github/:code");
 
