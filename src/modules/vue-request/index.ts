@@ -4,7 +4,7 @@ setGlobalOptions({
 	pagination: {
 		currentKey: "page",
 		pageSizeKey: "limit",
-		totalKey: "totalCount",
+		totalKey: "total",
 		totalPageKey: "totalPage",
 	},
 });
