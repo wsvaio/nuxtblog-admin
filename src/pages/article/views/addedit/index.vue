@@ -45,7 +45,6 @@ const submit = async () => {
 <template>
 	<vmodel
 		v-model:show="payload.showAddedit"
-		width="var(--lg)"
 		:loading="load.$loading"
 		@before-enter="payload.addeditTitle == '修改' && load.$action('同步类型'), list.Types(), list.Tags()"
 		@after-leave="load.$reset()"
@@ -96,11 +95,18 @@ const submit = async () => {
 				/>
 			</n-form-item>
 
-			<n-form-item path="content" label="内容" :rule="{ required: true, message: '请输入内容' }">
+			<!-- <n-form-item path="content" label="内容" :rule="{ required: true, message: '请输入内容' }">
 				<div class="w-full h-512px">
 					<markdown-editor v-model="load.content" class="!w-full !h-full" />
 				</div>
-			</n-form-item>
+
+        <div class="w-full h-512px">
+					<wang-editor v-model="load.content" class="!w-full !h-full" />
+				</div>
+			</n-form-item> -->
+
+
+
 		</n-form>
 
 		<template #footer>

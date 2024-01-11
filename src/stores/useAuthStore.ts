@@ -21,31 +21,31 @@ export default defineStore("auth", {
 		safetyConstruction: null as number | null,
 	}),
 	actions: {
-		async setRefreshToken() {
-			if (this.refreshTokenPromise) return this.refreshTokenPromise;
+		// async setRefreshToken() {
+		// 	if (this.refreshTokenPromise) return this.refreshTokenPromise;
 
-			this.refreshTokenPromise = refreshToken({
-				q: {
-					refreshToken: this.refreshToken,
-				},
-				errMsg: false,
-			});
+		// 	this.refreshTokenPromise = refreshToken({
+		// 		q: {
+		// 			refreshToken: this.refreshToken,
+		// 		},
+		// 		errMsg: false,
+		// 	});
 
-			this.refreshTokenPromise.then(result => {
-				merge(this.$state, { ...result });
-			});
-			this.refreshTokenPromise.finally(() => (this.refreshTokenPromise = null));
-			return this.refreshTokenPromise;
-		},
+		// 	this.refreshTokenPromise?.then(result => {
+		// 		merge(this.$state, { ...result });
+		// 	});
+		// 	this.refreshTokenPromise?.finally(() => (this.refreshTokenPromise = null));
+		// 	return this.refreshTokenPromise;
+		// },
 
 		async syncUser() {
-			const data = await userDetail();
-			merge(this.$state, data);
+			// const data = await userDetail();
+			// merge(this.$state, data);
 		},
 
 		async login(body: Record<any, any>) {
-			const data = await authorizeLogin({ body });
-			merge(this.$state, data);
+			// const data = await authorizeLogin({ body });
+			// merge(this.$state, data);
 		},
 		// async refresh() {
 		//   const data = await authorizeRefreshToken({ body: { refreshToken: this.refreshToken } });

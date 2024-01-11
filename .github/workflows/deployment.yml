@@ -1,0 +1,32 @@
+name: deployment
+
+on:
+  push:
+    branches: ["prod"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - run: |
+          npm install
+          npm run build
+
+      - uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        with:
+          host: 121.40.126.12
+          user: root
+          pass: ${{ secrets.ssh_password }}
+          connect_timeout: 10s
+          first_ssh: |
+            rm -rf /app/nginx/html/blog/admin/*
+          scp: |
+            ./dist/* => /app/nginx/html/blog/admin
+          last_ssh: |
+            echo ok

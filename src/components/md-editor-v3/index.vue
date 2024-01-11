@@ -2,7 +2,7 @@
 import { MdEditor } from "md-editor-v3";
 import "md-editor-v3/lib/style.css";
 
-const modelValue = defineModel();
+const modelValue = defineModel<string>();
 
 const onUploadImg = async (files, callback) => {
 	const res = await Promise.all(

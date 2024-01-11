@@ -1,10 +1,10 @@
 import { Progress } from "@wsvaio/utils";
-import { createAPI } from "@wsvaio/api";
+import { createByNativeFetch } from "@wsvaio/api";
 
-const { get, use } = createAPI<{
+const { get, use } = createByNativeFetch<{
 	progress: boolean;
 }>({
-	baseURL: "https://api.iconify.design",
+	base: "https://api.iconify.design",
 	log: import.meta.env.DEV, // 控制台是否打印日志
 	progress: true,
 	timeout: 10000,

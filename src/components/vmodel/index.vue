@@ -59,6 +59,7 @@ const setting = useSettingStore();
 		@after-enter="$emit('afterEnter')"
 		@after-leave="$emit('afterLeave')"
 		@before-leave="$emit('beforeLeave')"
+    :close-on-esc="false"
 	>
 		<template #header>
 			<slot name="header" />

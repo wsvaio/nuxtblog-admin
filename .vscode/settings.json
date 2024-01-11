@@ -1,8 +1,7 @@
 {
-  "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.acceptSuggestionOnCommitCharacter": false,
-	"editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.quickSuggestions": {
     "other": "on",
     "comments": "on",
@@ -10,9 +9,11 @@
   },
   "stylelint.enable": true,
   "stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass", "html"],
+  "eslint.experimental.useFlatConfig": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit",
+    "source.organizeImports": "never"
   },
   "less.lint.unknownAtRules": "ignore",
   "npm.packageManager": "pnpm",
@@ -22,8 +23,8 @@
     "CHANGELOG.md": true,
     "pnpm-lock.yaml": true
   },
-	"files.eol": "\n",
-	"vue.complete.casing.props": "kebab",
+  "files.eol": "\n",
+  "vue.complete.casing.props": "kebab",
   "vue.complete.casing.tags": "kebab",
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
@@ -31,5 +32,8 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.inlineSuggest.showToolbar": "onHover"
+  "editor.inlineSuggest.showToolbar": "always",
+
+
+
 }

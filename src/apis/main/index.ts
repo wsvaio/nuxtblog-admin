@@ -39,7 +39,8 @@ export const delMusic = del("/music/:id");
 
 export const getFile = get({
 	url: "/file/:id?",
-	q: { type: "json" }
+	q: { type: "json" },
+  config: true,
 });
 export const getFileAll = get("/file/all");
 export const postFile = post("/file");
@@ -52,3 +53,10 @@ export const authToken = get("/user/oauth/github/:code");
 export const upload = post("/file");
 
 export const toFileUrl = (id: string) => `${DEV ? "/api" : VITE_BASE_API}/file/${id}`;
+
+
+export const getAdmin = get("/admin/:id?");
+export const getAdminAll = get("/admin/all");
+export const postAdmin = post("/admin");
+export const putAdmin = put("/admin/:id");
+export const delAdmin = del("/admin/:id");

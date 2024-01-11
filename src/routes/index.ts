@@ -49,7 +49,8 @@ export const getComponent = (path: string) =>
 // 获取动态路由
 export const getDynamicRoutes = async () => {
 	return [];
-	const data: any[] = await permissionTreeList();
+	// const data: any[] = await permissionTreeList();
+  const data: any[] = [];
 	return deepMap(data, item => {
 		return {
 			path: item.path,
@@ -92,6 +93,12 @@ export const getStaticRoutes = (): RouteRecordRaw[] => [
 		name: "/music",
 		meta: { title: "音乐", icon: "i-carbon-types" },
 		component: getComponent("/music"),
+	},
+  {
+		path: "/admin",
+		name: "/admin",
+		meta: { title: "管理员", icon: "i-carbon-types" },
+		component: getComponent("/admin"),
 	},
 	// {
 	// 	path: "/comment",
