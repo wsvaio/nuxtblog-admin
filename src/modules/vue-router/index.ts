@@ -14,19 +14,20 @@ export const router = createRouter({
 router.beforeEach(() => Progress.start());
 
 // 未登录的页面跳转
-router.beforeEach((to, _from, next) => {
-	const auth = useAuthStore();
-	if (auth.whites.includes(to.path) && !to.redirectedFrom) return next();
-	const { isLogin } = useAuthStore();
-	if (to.path.startsWith("/login")) isLogin ? next("/") : next();
-	else isLogin ? next() : next("/login");
-});
+// router.beforeEach((to, _from, next) => {
+// 	const auth = useAuthStore();
+// 	if (auth.whites.includes(to.path) && !to.redirectedFrom) return next();
+// 	const { isLogin } = useAuthStore();
+// 	if (to.path.startsWith("/login")) isLogin ? next("/") : next();
+// 	else isLogin ? next() : next("/login");
+// });
 
 // 注册路由
 router.beforeEach(async (to, _from, next) => {
 	const auth = useAuthStore();
 	const setting = useSettingStore();
-	if (auth.routes.length || !auth.isLogin) return next();
+	// if (auth.routes.length || !auth.isLogin) return next();
+  if (auth.routes.length) return next();
 	setting.globalLoading = true;
 	await auth
 		.addOrReplaceRoute()

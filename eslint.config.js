@@ -7,7 +7,6 @@ export default wsvaio(
       "node_modules/*",
       "public/*",
       "dist/*",
-      "/src/routes/WebVideoCtrl",
 
       "**/* copy*",
       "**.auto-import.d.ts",

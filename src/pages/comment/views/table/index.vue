@@ -9,10 +9,14 @@ const action = useAction<Action>({ $mode: "inject" });
 
 const { data, pageSize, current, total, refreshAsync, loading } = $(
   usePagination(async pag => {
-    return await getAdmin({
+    return await getComment({
       q: {
         ...pag,
         ...pload.params,
+        include: JSON.stringify({
+          article: true,
+          comment: true,
+        }),
       },
     });
   })
@@ -21,7 +25,7 @@ const { data, pageSize, current, total, refreshAsync, loading } = $(
 action.use("刷新表格", refreshAsync);
 
 action.use("删除", async ({ id }) => {
-  await delAdmin({
+  await delComment({
     p: {
       id,
     },
@@ -34,26 +38,39 @@ action.use("删除", async ({ id }) => {
   <wrapable class="sticky top-0 z-10 bg-[var(--bg-color)]">
     <n-h4 font="bold" m="!0">管理员列表</n-h4>
 
-    <template #suffix>
-      <n-button type="primary" @click="pload.$assign({ showAddedit: true, addeditTitle: '添加' })">添加</n-button>
-    </template>
+    <template #suffix></template>
   </wrapable>
   <vtable
     :data="data?.list"
     :loading="loading"
     thead-top="58px"
     :columns="[
+      // {
+      //   title: 'id',
+      //   key: 'id',
+      // },
       {
-        title: '名称',
-        key: 'name',
+        title: '用户名称',
+        key: 'user.name',
       },
       {
-        title: '用户名',
-        key: 'username',
+        title: '评论内容',
+        key: 'content',
       },
       {
-        title: '权限等级',
-        key: 'role',
+        title: '文章',
+        key: 'article',
+        render: rowData => JSON.stringify(rowData.article),
+      },
+      {
+        title: '评论',
+        key: 'comment',
+        render: rowData => JSON.stringify(rowData.comment),
+      },
+      {
+        title: '来自',
+        key: 'from',
+        render: rowData => JSON.stringify(rowData.from),
       },
       {
         title: '修改时间',
@@ -68,18 +85,8 @@ action.use("删除", async ({ id }) => {
         title: '操作',
         key: 'id',
         ellipsis: true,
+        width: '4em',
         render: rowData => [
-          h(
-            NButton,
-            {
-              text: true,
-              type: 'primary',
-              onClick: () => {
-                action.act({ $: '打开修改', id: rowData.id });
-              },
-            },
-            { default: () => '修改' }
-          ),
           h(
             NPopconfirm,
             {
@@ -95,7 +102,6 @@ action.use("删除", async ({ id }) => {
                   {
                     text: true,
                     type: 'error',
-                    class: 'ml-.5em',
                     onClick: () => {},
                   },
                   { default: () => '删除' }

@@ -15,11 +15,11 @@ const sync = async (id: string) => {
   load.$assign(await getAdmin({ p: { id } }));
 };
 
-action.use("打开修改", async ({ id }) => {
+action.use("打开详情", async ({ id }) => {
   sync(id);
   pload.$assign({
-    showAddedit: true,
-    addeditTitle: "修改",
+    showPassword: true,
+    addeditTitle: "详情",
   });
 });
 
@@ -39,14 +39,14 @@ const submit = async () => {
   }
   pload.$assign({
     addeditTitle: "",
-    showAddedit: false,
+    showPassword: false,
   });
   action.act("刷新表格");
 };
 </script>
 
 <template>
-  <vmodel v-model:show="pload.showAddedit" :loading="action.acting()" @after-leave="load.$reset()">
+  <vmodel v-model:show="pload.showPassword" :loading="action.acting()" @after-leave="load.$reset()">
     <template #header>
       <span>{{ pload.addeditTitle }}</span>
     </template>
@@ -83,7 +83,7 @@ const submit = async () => {
     <template #footer>
       <div flex="~" justify="center">
         <n-button type="primary" px="2em" @click="submit">保存</n-button>
-        <n-button px="2em" ml="1em" @click="pload.showAddedit = false">取消</n-button>
+        <n-button px="2em" ml="1em" @click="pload.showPassword = false">取消</n-button>
       </div>
     </template>
   </vmodel>

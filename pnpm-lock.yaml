@@ -57,8 +57,8 @@ dependencies:
     specifier: ^0.12.1
     version: 0.12.1
   vditor:
-    specifier: ^3.9.8
-    version: 3.9.8
+    specifier: ^3.8.15
+    version: 3.8.15
   vue:
     specifier: ^3.4.8
     version: 3.4.8(typescript@5.3.3)
@@ -1649,6 +1649,7 @@ packages:
     resolution: {integrity: sha512-TVYVWD/SYwWzGGnbfTkrNpdE4HON46orgMNHCivlXmlsSGQOx/OHHYiQcMIOx38/GWgwr/po2LBn7wypkWw/Mg==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -1657,6 +1658,7 @@ packages:
     resolution: {integrity: sha512-XcKvuendwizYYhFxpvQ3xVpzje2HHImzg33wL9zvxtj77HvPStbSGI9czrdbfrf8DGMcNNReH9pVZv8qejAQ5A==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -1665,6 +1667,7 @@ packages:
     resolution: {integrity: sha512-LFHS/8Q+I9YA0yVETyjonMJ3UA+DczeBd/MqNEzsGSTdNvSJa1OJZcSH8GiXLvcizgp9AlHs2walqRcqzjOi3A==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -1673,6 +1676,7 @@ packages:
     resolution: {integrity: sha512-dIYgo+j1+yfy81i0YVU5KnQrIJZE8ERomx17ReU4GREjGtDW4X+nvkBak2xAUpyqLs4eleDSj3RrV72fQos7zw==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -1681,6 +1685,7 @@ packages:
     resolution: {integrity: sha512-RoaYxjdHQ5TPjaPrLsfKqR3pakMr3JGqZ+jZM0zP2IkDtsGa4CqYaWSfQmZVgFUCgLrTnzX+cnHS3nfl+kB6ZQ==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -2659,7 +2664,7 @@ packages:
     resolution: {integrity: sha512-AKwHtFiT8ELo852ljyXz3ZdQfJlJjdBQiLBpXjLBaUeB7lKcd67Mq8pKmBNEknBPZs92XYJYNowfWJ3G6Ej+/w==}
     dependencies:
       css-property-sort-order-smacss: 2.2.0
-      postcss-html: 1.5.0
+      postcss-html: 1.6.0
       postcss-less: 6.0.0(postcss@8.4.33)
       postcss-scss: 4.0.9(postcss@8.4.33)
       stylelint-config-standard: 34.0.0(stylelint@16.1.0)
@@ -6132,8 +6137,8 @@ packages:
     engines: {node: '>=4.0.0'}
     dev: false
 
-  /postcss-html@1.5.0:
-    resolution: {integrity: sha512-kCMRWJRHKicpA166kc2lAVUGxDZL324bkj/pVOb6RhjB0Z5Krl7mN0AsVkBhVIRZZirY0lyQXG38HCVaoKVNoA==}
+  /postcss-html@1.6.0:
+    resolution: {integrity: sha512-OWgQ9/Pe23MnNJC0PL4uZp8k0EDaUvqpJFSiwFxOLClAhmD7UEisyhO3x5hVsD4xFrjReVTXydlrMes45dJ71w==}
     engines: {node: ^12 || >=14}
     dependencies:
       htmlparser2: 8.0.2
@@ -7293,8 +7298,8 @@ packages:
       vue: 3.4.8(typescript@5.3.3)
     dev: false
 
-  /vditor@3.9.8:
-    resolution: {integrity: sha512-Ls17n8GR9t6JOQqH6c0+UegOkuKT/qtMEUOi/a92OzocbsqNiit0YwtgTiqCE26u3go7ExHRJ2e83YJT2AHfxw==}
+  /vditor@3.8.15:
+    resolution: {integrity: sha512-BYSBNUuhtvOfu1OU+NhS7R6TcrNP0UmQ8Vtbzq9BnLoG1uIHPZaTjtJIv00OPqHEcZa4KpR7mU+n9P+i+9SHuA==}
     dependencies:
       diff-match-patch: 1.0.5
     dev: false

@@ -4,17 +4,12 @@ import type { Pload, Action } from ".";
 import SiderHeader from "@/layouts/sider-header/index.vue";
 import FilterView from "./views/filter/index.vue";
 import TableView from "./views/table/index.vue";
-import AddeditView from "./views/addedit/index.vue";
-// import PasswordView from "./views/password/index.vue";
 defineOptions({
   name: "",
 });
 usePload<Pload>({
   $mode: "provide",
-  addeditTitle: "",
   params: {},
-  showAddedit: false,
-  showPassword: false,
 });
 
 useAction<Action>({ $mode: "provide" });
@@ -32,8 +27,6 @@ const setting = useSettingStore();
       <filter-view></filter-view>
     </template>
 
-    <addedit-view></addedit-view>
-    <!-- <password-view></password-view> -->
 
     <table-view></table-view>
   </sider-header>

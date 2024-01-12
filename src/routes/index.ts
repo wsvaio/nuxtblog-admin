@@ -100,18 +100,18 @@ export const getStaticRoutes = (): RouteRecordRaw[] => [
 		meta: { title: "管理员", icon: "i-carbon-types" },
 		component: getComponent("/admin"),
 	},
-	// {
-	// 	path: "/comment",
-	// 	name: "/comment",
-	// 	meta: { title: "评论", icon: "i-carbon-ibm-cloud-projects" },
-	// 	component: getComponent("/comment"),
-	// },
-	// {
-	// 	path: "/user",
-	// 	name: "/user",
-	// 	meta: { title: "用户", icon: "i-carbon-ibm-cloud-projects" },
-	// 	component: getComponent("/user"),
-	// },
+	{
+		path: "/comment",
+		name: "/comment",
+		meta: { title: "评论", icon: "i-carbon-types" },
+		component: getComponent("/comment"),
+	},
+	{
+		path: "/user",
+		name: "/user",
+		meta: { title: "用户", icon: "i-carbon-types" },
+		component: getComponent("/user"),
+	},
 
 ];
 

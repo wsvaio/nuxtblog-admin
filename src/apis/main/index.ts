@@ -38,7 +38,7 @@ export const putMusic = put("/music/:id");
 export const delMusic = del("/music/:id");
 
 export const getFile = get({
-	url: "/file/:id?",
+	path: "/file/:id?",
 	q: { type: "json" },
   config: true,
 });
@@ -60,3 +60,6 @@ export const getAdminAll = get("/admin/all");
 export const postAdmin = post("/admin");
 export const putAdmin = put("/admin/:id");
 export const delAdmin = del("/admin/:id");
+
+export const adminLogin = post("/admin/login");
+export const adminInfo = post("/admin/info");

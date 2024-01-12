@@ -47,6 +47,8 @@ payload.$use("删除")(async () => {
   await delArticle({ p: { id: payload.id } });
   await refreshAsync();
 });
+
+
 </script>
 
 <template>
@@ -150,18 +152,18 @@ payload.$use("删除")(async () => {
               },
               { default: () => 'Wangeditor' }
             ),
-            h(
-              NButton,
-              {
-                text: true,
-                type: 'primary',
-                class: 'ml-0.5em',
-                onClick: () => {
-                  payload.$action({ showVditor: true, id: rowData.id });
-                },
-              },
-              { default: () => 'Vditor' }
-            ),
+            // h(
+            //   NButton,
+            //   {
+            //     text: true,
+            //     type: 'primary',
+            //     class: 'ml-0.5em',
+            //     onClick: () => {
+            //       payload.$action({ showVditor: true, id: rowData.id });
+            //     },
+            //   },
+            //   { default: () => 'Vditor' }
+            // ),
             h(
               NPopconfirm,
               {
