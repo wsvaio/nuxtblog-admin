@@ -11,9 +11,8 @@
   "stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass", "html"],
   "eslint.experimental.useFlatConfig": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit",
-    "source.organizeImports": "never"
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
   "less.lint.unknownAtRules": "ignore",
   "npm.packageManager": "pnpm",
@@ -32,8 +31,5 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.inlineSuggest.showToolbar": "always",
-
-
-
+  "editor.inlineSuggest.showToolbar": "always"
 }

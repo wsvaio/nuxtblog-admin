@@ -3,11 +3,11 @@ import { usePagination } from "vue-request";
 import { NButton, NPopconfirm, NSpace, NTag } from "naive-ui";
 import { usePayload } from "@wsvaio/use";
 import AddeditView from "./views/addedit/index.vue";
-import type { Payload } from ".";
-import SiderHeader from "@/layouts/sider-header/index.vue";
 import MdEditorV3View from "./views/md-editor-v3/index.vue";
 import WangeditorView from "./views/wangeditor/index.vue";
 import VditorView from "./views/vditor/index.vue";
+import type { Payload } from ".";
+import SiderHeader from "@/layouts/sider-header/index.vue";
 
 defineOptions({
   name: "",
@@ -47,8 +47,6 @@ payload.$use("删除")(async () => {
   await delArticle({ p: { id: payload.id } });
   await refreshAsync();
 });
-
-
 </script>
 
 <template>
@@ -69,9 +67,9 @@ payload.$use("删除")(async () => {
     </template>
 
     <addedit-view />
-    <md-editor-v3-view></md-editor-v3-view>
-    <wangeditor-view></wangeditor-view>
-    <vditor-view></vditor-view>
+    <md-editor-v3-view />
+    <wangeditor-view />
+    <vditor-view />
 
     <wrapable class="sticky top-0 z-10 bg-[var(--bg-color)]">
       <n-h4 font="bold" m="!0">文章列表</n-h4>
@@ -100,7 +98,7 @@ payload.$use("删除")(async () => {
             h(
               NSpace,
               {},
-              { default: () => rowData.tags.map(tag => h(NTag, { type: 'primary' }, { default: () => tag.name })) }
+              { default: () => rowData.tags.map(tag => h(NTag, { type: 'primary' }, { default: () => tag.name })) },
             ),
         },
         {
@@ -126,7 +124,7 @@ payload.$use("删除")(async () => {
                   payload.$action({ showAddedit: true, addeditTitle: '修改', id: rowData.id });
                 },
               },
-              { default: () => '修改' }
+              { default: () => '修改' },
             ),
             h(
               NButton,
@@ -138,7 +136,7 @@ payload.$use("删除")(async () => {
                   payload.$action({ showMdEditorV3: true, id: rowData.id });
                 },
               },
-              { default: () => 'MdEditorV3' }
+              { default: () => 'MdEditorV3' },
             ),
             h(
               NButton,
@@ -150,20 +148,20 @@ payload.$use("删除")(async () => {
                   payload.$action({ showWangeditor: true, id: rowData.id });
                 },
               },
-              { default: () => 'Wangeditor' }
+              { default: () => 'Wangeditor' },
             ),
-            // h(
-            //   NButton,
-            //   {
-            //     text: true,
-            //     type: 'primary',
-            //     class: 'ml-0.5em',
-            //     onClick: () => {
-            //       payload.$action({ showVditor: true, id: rowData.id });
-            //     },
-            //   },
-            //   { default: () => 'Vditor' }
-            // ),
+            h(
+              NButton,
+              {
+                text: true,
+                type: 'primary',
+                class: 'ml-0.5em',
+                onClick: () => {
+                  payload.$action({ showVditor: true, id: rowData.id });
+                },
+              },
+              { default: () => 'Vditor' },
+            ),
             h(
               NPopconfirm,
               {
@@ -182,9 +180,9 @@ payload.$use("删除")(async () => {
                       class: 'ml-0.5em',
                       onClick: () => {},
                     },
-                    { default: () => '删除' }
+                    { default: () => '删除' },
                   ),
-              }
+              },
             ),
           ],
         },
@@ -193,7 +191,7 @@ payload.$use("删除")(async () => {
     <vpagination
       v-model:page="current"
       v-model:pageSize="pageSize"
-      class="sticky bottom-0 z-10 bg-[var(--bg-color)] mt-auto"
+      class="sticky bottom-0 z-10 mt-auto bg-[var(--bg-color)]"
       :item-count="total"
     />
   </sider-header>

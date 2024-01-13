@@ -38,8 +38,8 @@ export const putMusic = put("/music/:id");
 export const delMusic = del("/music/:id");
 
 export const getFile = get({
-	path: "/file/:id?",
-	q: { type: "json" },
+  path: "/file/:id?",
+  q: { type: "json" },
   config: true,
 });
 export const getFileAll = get("/file/all");
@@ -54,7 +54,6 @@ export const upload = post("/file");
 
 export const toFileUrl = (id: string) => `${DEV ? "/api" : VITE_BASE_API}/file/${id}`;
 
-
 export const getAdmin = get("/admin/:id?");
 export const getAdminAll = get("/admin/all");
 export const postAdmin = post("/admin");
@@ -63,3 +62,9 @@ export const delAdmin = del("/admin/:id");
 
 export const adminLogin = post("/admin/login");
 export const adminInfo = post("/admin/info");
+
+export const getFriend = get("/friend/:id?");
+export const getFriendAll = get("/friend/all");
+export const postFriend = post("/friend");
+export const putFriend = put("/friend/:id");
+export const delFriend = del("/friend/:id");

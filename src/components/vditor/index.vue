@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { sleep } from "@wsvaio/utils";
 import Vditor from "vditor";
 import "vditor/dist/index.css";
 
@@ -7,18 +6,20 @@ let value = $(defineModel<string>({ default: "" }));
 let vditor = $ref<Vditor>();
 const vditorRef = $ref<HTMLDivElement>();
 let isVditorInit = $ref(false);
-// watch(
-//   () => value,
-//   val => {
-//     if (!isVditorInit) return;
-//     let v = vditor?.getValue();
-//     if (val && v !== val) vditor?.setValue(val);
-//   }
-// );
+watch(
+  () => value,
+  val => {
+    if (!isVditorInit)
+      return;
+    const v = vditor?.getValue();
+    if (val && v !== val)
+      vditor?.setValue(val);
+  },
+);
 
 onMounted(() => {
-  if (!vditorRef) return;
-  console.log(vditorRef, '1');
+  if (!vditorRef)
+    return;
   vditor = new Vditor(vditorRef, {
     after: () => {
       vditor?.setValue(value);
@@ -32,7 +33,7 @@ onMounted(() => {
     },
     cache: {
       enable: false,
-      id: '6'
+      id: "6",
     },
     upload: {
       url: "/api/file",

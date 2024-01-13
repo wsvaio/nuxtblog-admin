@@ -4,21 +4,21 @@ export default wsvaio(
   {
     unocss: true,
     ignores: [
-      "node_modules/*",
-      "public/*",
-      "dist/*",
+      "node_modules",
+      "public",
+      "dist",
 
-      "**/* copy*",
-      "**.auto-import.d.ts",
-      "**/auto-components.d.ts",
+      "* copy*",
+      "auto-import.d.ts",
+      "auto-components.d.ts",
 
-      "**/*.js",
+      // "**/*.js",
     ],
   },
   vue,
   {
     rules: {
-      'ts/consistent-type-definitions': 'off'
-    }
+      "ts/consistent-type-definitions": "off",
+    },
   }
 );
