@@ -15,7 +15,7 @@ const list = useListStore();
 load.$use("同步类型")(async () => {
   load.$action(await getArticle({ param: { id: articleId } }));
 });
-const submit = async () => {
+async function submit() {
   await formRef?.validate();
   if (!articleId) {
     await postArticle({
@@ -23,7 +23,8 @@ const submit = async () => {
         ...pick(load, ["title", "content", "tags", "type"]),
       },
     });
-  } else {
+  }
+  else {
     await putArticle({
       p: {
         id: articleId,
@@ -33,7 +34,7 @@ const submit = async () => {
       },
     });
   }
-};
+}
 </script>
 
 <template>
@@ -69,10 +70,8 @@ const submit = async () => {
         <n-select
           :value="load.tags?.map(item => item.name)"
           placeholder="请选择标签"
-          multiple
-          clearable
-          tag
-          filterable
+
+          clearable tag filterable multiple
           :options="
             list.tags.map(item => ({
               label: item.name,

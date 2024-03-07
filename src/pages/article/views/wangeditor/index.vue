@@ -13,7 +13,7 @@ const load = usePayload({
 load.$use("同步类型")(async () => {
   load.$action(await getArticle({ param: { id: payload.id } }));
 });
-const submit = async () => {
+async function submit() {
   await putArticle({
     p: {
       id: payload.id,
@@ -27,7 +27,7 @@ const submit = async () => {
     $name: "刷新列表",
     showWangeditor: false,
   });
-};
+}
 </script>
 
 <template>
@@ -43,7 +43,7 @@ const submit = async () => {
       <span>Wangeditor编辑器</span>
     </template>
 
-    <wangeditor v-model="load.content" class="!w-full !h-761px" />
+    <wangeditor v-model="load.content" class="!h-761px !w-full" />
 
     <template #footer>
       <div flex="~" justify="center">
