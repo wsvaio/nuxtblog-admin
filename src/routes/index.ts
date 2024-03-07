@@ -93,31 +93,31 @@ export function getStaticRoutes(): RouteRecordRaw[] {
     {
       path: "/music",
       name: "/music",
-      meta: { title: "音乐", icon: "i-carbon-types" },
+      meta: { title: "音乐", icon: "i-material-symbols-library-music-outline" },
       component: getComponent("/music"),
     },
     {
       path: "/admin",
       name: "/admin",
-      meta: { title: "管理员", icon: "i-carbon-types" },
+      meta: { title: "管理员", icon: "i-material-symbols-admin-panel-settings-outline" },
       component: getComponent("/admin"),
     },
     {
       path: "/comment",
       name: "/comment",
-      meta: { title: "评论", icon: "i-carbon-types" },
+      meta: { title: "评论", icon: "i-material-symbols-comment-outline" },
       component: getComponent("/comment"),
     },
     {
       path: "/user",
       name: "/user",
-      meta: { title: "用户", icon: "i-carbon-types" },
+      meta: { title: "用户", icon: "i-ic-sharp-person-outline" },
       component: getComponent("/user"),
     },
     {
       path: "/friend",
       name: "/friend",
-      meta: { title: "朋友们", icon: "i-carbon-types" },
+      meta: { title: "朋友们", icon: "i-tabler-friends" },
       component: getComponent("/friend"),
     },
 

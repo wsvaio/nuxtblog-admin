@@ -13,7 +13,7 @@ const load = usePayload({
 load.$use("同步类型")(async () => {
   load.$action(await getArticle({ param: { id: payload.id } }));
 });
-const submit = async () => {
+async function submit() {
   await putArticle({
     p: {
       id: payload.id,
@@ -27,7 +27,7 @@ const submit = async () => {
     $name: "刷新列表",
     showVditor: false,
   });
-};
+}
 </script>
 
 <template>
@@ -43,7 +43,9 @@ const submit = async () => {
       <span>Vditor编辑器</span>
     </template>
 
-    <vditor v-model="load.content" class="!w-full !h-761px" />
+    <div h="!761px">
+      <vditor v-model="load.content" h="!full" />
+    </div>
 
     <template #footer>
       <div flex="~" justify="center">

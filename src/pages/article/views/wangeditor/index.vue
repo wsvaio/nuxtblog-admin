@@ -43,7 +43,9 @@ async function submit() {
       <span>Wangeditor编辑器</span>
     </template>
 
-    <wangeditor v-model="load.content" class="!h-761px !w-full" />
+    <div h="!761px">
+      <wangeditor v-model="load.content" h="!full" />
+    </div>
 
     <template #footer>
       <div flex="~" justify="center">
